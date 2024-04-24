@@ -12,7 +12,7 @@ function App() {
 
   function addTask() {
     if (taskInput == "") return
-    fetch('http://localhost:3000/add-todo', {
+    fetch('https://todo-ai-jxvs.onrender.com/add-todo', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -26,7 +26,7 @@ function App() {
   function delTask(index) {
     let newTasks = [...tasks]
     newTasks.splice(index, 1)
-    fetch('http://localhost:3000/delete-todo', {
+    fetch('https://todo-ai-jxvs.onrender.com/delete-todo', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -37,7 +37,7 @@ function App() {
   }
 
   useEffect(() => {
-    fetch('http://localhost:3000/todos')
+    fetch('https://todo-ai-jxvs.onrender.com/todos')
       .then(res => res.json())
       .then(data => {
         console.log(data)
